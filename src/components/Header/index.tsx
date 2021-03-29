@@ -1,5 +1,7 @@
 import React from 'react';
 
+import * as S from './styled';
+
 const routes = [
   { path: '/falcon-9', content: 'Falcon 9' },
   { path: '/falcon-9', content: 'Falcon 9' },
@@ -10,14 +12,24 @@ const routes = [
 ];
 
 const Header = () => {
-  return (
-    <ul>
+  const content = (
+    <S.LinksContainer>
       {routes.map((route, index) => (
-        <a href={route.path} key={index}>
-          <li>{route.content}</li>
-        </a>
+        <S.LinkRoot key={index}>
+          <S.Link to={route.path}>{route.content}</S.Link>
+        </S.LinkRoot>
       ))}
-    </ul>
+    </S.LinksContainer>
+  );
+
+  return (
+    <S.HeaderRoot>
+      <S.HeaderBackground />
+      <S.HeaderInner>
+        <S.Logo to="/" />
+        <S.Navigation>{content}</S.Navigation>
+      </S.HeaderInner>
+    </S.HeaderRoot>
   );
 };
 

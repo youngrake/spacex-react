@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'D-DIN Bold';
+    src: url('./assets/fonts/d-din.bold-webfont.woff') format('woff'), 
+        url('./assets/fonts/d-din.bold-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'D-DIN Regular';
+    src: url('./assets/fonts/d-din.regular-webfont.woff') format('woff'),
+        url('./assets/fonts/d-din.regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+ 
