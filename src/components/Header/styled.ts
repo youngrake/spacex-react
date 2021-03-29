@@ -1,3 +1,4 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -31,6 +32,8 @@ export const HeaderBackground = styled.div`
 `;
 
 export const HeaderInner = styled.div`
+  max-width: 1400px;
+  margin: 0 auto;
   display: block;
   position: relative;
   width: 100%;
@@ -44,6 +47,10 @@ export const Navigation = styled.div`
   position: absolute;
   top: 38px;
   height: 30px;
+
+  @media (max-width: 968px) {
+    display: none;
+  }
 `;
 
 export const LinksContainer = styled.ul`
@@ -62,8 +69,28 @@ export const LinkRoot = styled.li`
 export const Link = styled(NavLink)`
   -webkit-transition: opacity 0.6s linear;
   transition: opacity 0.6s linear;
+  text-transform: uppercase;
+  line-height: 1.4;
 
-  ${font.regular}
+  ::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+  :hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  ${font.bold}
 `;
 
 export const Logo = styled(NavLink)`
@@ -72,4 +99,16 @@ export const Logo = styled(NavLink)`
   left: 50px;
   width: 210px;
   height: auto;
+
+  svg {
+    width: 100%;
+  }
+
+  @media (max-width: 968px) {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 150px;
+    left: 50%;
+    margin-left: 15px;
+  }
 `;

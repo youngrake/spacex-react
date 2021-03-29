@@ -1,5 +1,11 @@
 import React from 'react';
 
-const HomePage = () => <div>pepe</div>;
+import * as S from './styled';
+
+const HomePage = () => (
+  <S.HomeRoot>
+    <S.HomeBackground />
+  </S.HomeRoot>
+);
 
 export default HomePage;
